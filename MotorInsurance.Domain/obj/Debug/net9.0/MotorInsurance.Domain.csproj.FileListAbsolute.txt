@@ -1,0 +1,11 @@
+D:\Thabang\TR_Consaulting\enterprise applications\motorInsurance\MotorInsurance.Domain\bin\Debug\net9.0\MotorInsurance.Domain.deps.json
+D:\Thabang\TR_Consaulting\enterprise applications\motorInsurance\MotorInsurance.Domain\bin\Debug\net9.0\MotorInsurance.Domain.dll
+D:\Thabang\TR_Consaulting\enterprise applications\motorInsurance\MotorInsurance.Domain\bin\Debug\net9.0\MotorInsurance.Domain.pdb
+D:\Thabang\TR_Consaulting\enterprise applications\motorInsurance\MotorInsurance.Domain\obj\Debug\net9.0\MotorInsurance.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Thabang\TR_Consaulting\enterprise applications\motorInsurance\MotorInsurance.Domain\obj\Debug\net9.0\MotorInsurance.Domain.AssemblyInfoInputs.cache
+D:\Thabang\TR_Consaulting\enterprise applications\motorInsurance\MotorInsurance.Domain\obj\Debug\net9.0\MotorInsurance.Domain.AssemblyInfo.cs
+D:\Thabang\TR_Consaulting\enterprise applications\motorInsurance\MotorInsurance.Domain\obj\Debug\net9.0\MotorInsurance.Domain.csproj.CoreCompileInputs.cache
+D:\Thabang\TR_Consaulting\enterprise applications\motorInsurance\MotorInsurance.Domain\obj\Debug\net9.0\MotorInsurance.Domain.dll
+D:\Thabang\TR_Consaulting\enterprise applications\motorInsurance\MotorInsurance.Domain\obj\Debug\net9.0\refint\MotorInsurance.Domain.dll
+D:\Thabang\TR_Consaulting\enterprise applications\motorInsurance\MotorInsurance.Domain\obj\Debug\net9.0\MotorInsurance.Domain.pdb
+D:\Thabang\TR_Consaulting\enterprise applications\motorInsurance\MotorInsurance.Domain\obj\Debug\net9.0\ref\MotorInsurance.Domain.dll

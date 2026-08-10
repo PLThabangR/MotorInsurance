@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\MotorInsurance.API",
+    "\\MotorInsurance.API\\Features",
+    "\\MotorInsurance.API\\Features\\Users",
+    "\\MotorInsurance.API\\Properties",
+    "\\MotorInsurance.Domain",
+    "\\MotorInsurance.Domain\\Entities"
+  ],
+  "SelectedNode": "\\MotorInsurance.Domain\\MotorInsurance.Domain.csproj",
+  "PreviewInSolutionExplorer": false
+}
