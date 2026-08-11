@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "D:\\Thabang\\TR_Consaulting\\enterprise applications\\motorInsurance\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Thabang\\TR_Consaulting\\enterprise applications\\motorInsurance\\MotorInsurance.Domain\\Entities\\User.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MotorInsurance.Domain\\Entities\\User.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A31FB30E-DB4E-468E-A0D2-F7D22AA03784}|MotorInsurance.API\\MotorInsurance.API.csproj|d:\\thabang\\tr_consaulting\\enterprise applications\\motorinsurance\\motorinsurance.api\\motorinsurance.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{A31FB30E-DB4E-468E-A0D2-F7D22AA03784}|MotorInsurance.API\\MotorInsurance.API.csproj|solutionrelative:motorinsurance.api\\motorinsurance.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Thabang\\TR_Consaulting\\enterprise applications\\motorInsurance\\MotorInsurance.API\\Features\\Users\\GetUserHandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MotorInsurance.API\\Features\\Users\\GetUserHandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Thabang\\TR_Consaulting\\enterprise applications\\motorInsurance\\MotorInsurance.API\\Features\\Users\\Queries.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MotorInsurance.API\\Features\\Users\\Queries.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C23CAC17-3265-1AC4-AD5B-E1C5DFFBA896}|MotorInsurance.Domain\\MotorInsurance.Domain.csproj|d:\\thabang\\tr_consaulting\\enterprise applications\\motorinsurance\\motorinsurance.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C23CAC17-3265-1AC4-AD5B-E1C5DFFBA896}|MotorInsurance.Domain\\MotorInsurance.Domain.csproj|solutionrelative:motorinsurance.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,15 +43,50 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "MotorInsurance.API.http",
+              "DocumentMoniker": "D:\\Thabang\\TR_Consaulting\\enterprise applications\\motorInsurance\\MotorInsurance.API\\MotorInsurance.API.http",
+              "RelativeDocumentMoniker": "MotorInsurance.API\\MotorInsurance.API.http",
+              "ToolTip": "D:\\Thabang\\TR_Consaulting\\enterprise applications\\motorInsurance\\MotorInsurance.API\\MotorInsurance.API.http",
+              "RelativeToolTip": "MotorInsurance.API\\MotorInsurance.API.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2026-08-11T22:01:04.321Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GetUserHandler.cs",
+              "DocumentMoniker": "D:\\Thabang\\TR_Consaulting\\enterprise applications\\motorInsurance\\MotorInsurance.API\\Features\\Users\\GetUserHandler.cs",
+              "RelativeDocumentMoniker": "MotorInsurance.API\\Features\\Users\\GetUserHandler.cs",
+              "ToolTip": "D:\\Thabang\\TR_Consaulting\\enterprise applications\\motorInsurance\\MotorInsurance.API\\Features\\Users\\GetUserHandler.cs",
+              "RelativeToolTip": "MotorInsurance.API\\Features\\Users\\GetUserHandler.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-10T23:35:43.123Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Queries.cs",
+              "DocumentMoniker": "D:\\Thabang\\TR_Consaulting\\enterprise applications\\motorInsurance\\MotorInsurance.API\\Features\\Users\\Queries.cs",
+              "RelativeDocumentMoniker": "MotorInsurance.API\\Features\\Users\\Queries.cs",
+              "ToolTip": "D:\\Thabang\\TR_Consaulting\\enterprise applications\\motorInsurance\\MotorInsurance.API\\Features\\Users\\Queries.cs",
+              "RelativeToolTip": "MotorInsurance.API\\Features\\Users\\Queries.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-10T23:20:40.237Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "User.cs",
               "DocumentMoniker": "D:\\Thabang\\TR_Consaulting\\enterprise applications\\motorInsurance\\MotorInsurance.Domain\\Entities\\User.cs",
               "RelativeDocumentMoniker": "MotorInsurance.Domain\\Entities\\User.cs",
               "ToolTip": "D:\\Thabang\\TR_Consaulting\\enterprise applications\\motorInsurance\\MotorInsurance.Domain\\Entities\\User.cs",
               "RelativeToolTip": "MotorInsurance.Domain\\Entities\\User.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAuwCMAAABaAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAuwA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-10T22:49:54.312Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-10T22:49:54.312Z"
             }
           ]
         }

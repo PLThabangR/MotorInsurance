@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MotorInsurance.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+11c20c76386a3b26acfaf7a3cdc12e89abbf31ae")]
 [assembly: System.Reflection.AssemblyProductAttribute("MotorInsurance.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MotorInsurance.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

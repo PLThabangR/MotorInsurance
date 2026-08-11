@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: MotorInsurance.API/Dockerfile
+    container_name: motor-insurance-api
+    ports:
+      - "5000:80"  # Map port 5000 
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    volumes:
+      - ./logs:/app/logs  # Mount logs folder to see logs 
+    restart: unless-stopped
