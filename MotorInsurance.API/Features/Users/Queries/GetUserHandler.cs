@@ -28,12 +28,12 @@ public class GetUserHandler : IRequestHandler<GetUserQuery, GetUserResponse>
     public Task<GetUserResponse> Handle(GetUserQuery request, CancellationToken cancellationToken)
     {
         // LOGIC: Find the user in our "database"
-        if (!_users.TryGetValue(request.Id, out var user))
+        if (!_users.TryGetValue(request.UserId, out var user))
         {
             // BUSINESS RULE: User must exist
             // Throw exception if not found
             // Global exception handler will catch this and return 404
-            throw new KeyNotFoundException($"User with ID {request.Id} not found");
+            throw new KeyNotFoundException($"User with ID {request.UserId} not found");
         }
 
         // MAPSTER: Auto-map User entity to GetUserResponse
