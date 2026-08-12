@@ -1,6 +1,9 @@
 using MediatR;
 using MotorInsurance.Domain.Entities;
 using Mapster;
+using MotorInsurance.Domain.Persistence;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace MotorInsurance.API.Features.Users.Queries;
 
@@ -10,40 +13,31 @@ namespace MotorInsurance.API.Features.Users.Queries;
 /// </summary>
 public class GetUserHandler : IRequestHandler<GetUserQuery, GetUserResponse>
 {
-    // IN-MEMORY STORE - Why?
-    // We're not using a database yet (that's TICKET-002)
-    // This static dictionary simulates a database
-    // It's shared across all requests (like a real database would be)
-    private static readonly Dictionary<Guid, User> _users = new();
-
-    // SEED DATA - Why?
-    // We need some test data to work with
-    // In production, this would come from a database
-    static GetUserHandler()
-    {
-        var user = new User("john@example.com", "John Doe");
-        _users[user.Id] = user;
+    // properties
+    private ApplicationDbContext _context;
+    //constructor
+    public GetUserHandler(ApplicationDbContext context)
+    {    
+        _context = context;
+        
     }
-
-    public Task<GetUserResponse> Handle(GetUserQuery request, CancellationToken cancellationToken)
+        //Use async/await to communicate with the database
+    public async Task<GetUserResponse> Handle(GetUserQuery request, CancellationToken cancellationToken)
     {
         // LOGIC: Find the user in our "database"
-        if (!_users.TryGetValue(request.UserId, out var user))
+        var user =await  _context.Users.AsNoTracking().FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken);
+        
+        if (user is null)
         {
-            // BUSINESS RULE: User must exist
-            // Throw exception if not found
-            // Global exception handler will catch this and return 404
-            throw new KeyNotFoundException($"User with ID {request.UserId} not found");
+            throw new KeyNotFoundException($"User with id {request.Id} not found.");
         }
-
-        // MAPSTER: Auto-map User entity to GetUserResponse
-        // Instead of manually mapping each property:
-        // var response = new GetUserResponse(user.Id, user.Email, user.Name, user.CreatedAt);
         // Mapster does it automatically using convention
+        //Map to response
         var response = user.Adapt<GetUserResponse>();
 
-        // Task.FromResult wraps the response in a Task
+
         // MediatR expects handlers to return Task<T>
-        return Task.FromResult(response);
+        return response;
     }
 }
+

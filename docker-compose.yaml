@@ -1,15 +1,51 @@
-version: '3.8'
-
 services:
+  # ==========================================
+  # POSTGRESQL DATABASE
+  # ==========================================
+  postgres:
+    image: postgres:15-alpine
+    container_name: motor-insurance-postgres
+    environment:
+      POSTGRES_DB: MotorInsuranceDb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+         
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d MotorInsuranceDb"]  
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - motor-insurance-network
+
+  # ==========================================
+  # API SERVICE
+  # ==========================================
   api:
     build:
       context: .
       dockerfile: MotorInsurance.API/Dockerfile
     container_name: motor-insurance-api
-    ports:
-      - "5000:80"  # Map port 5000 
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=postgres;Port=5432;Database=MotorInsuranceDb;User Id=postgres;Password=postgres;
+    ports:
+      - "5000:80"
+    depends_on:
+      postgres:
+        condition: service_healthy
     volumes:
-      - ./logs:/app/logs  # Mount logs folder to see logs 
-    restart: unless-stopped
+      - ./logs:/app/logs
+    networks:
+      - motor-insurance-network
+
+volumes:
+  postgres_data:
+
+networks:
+  motor-insurance-network:
+    driver: bridge

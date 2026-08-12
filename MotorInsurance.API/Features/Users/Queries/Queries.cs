@@ -5,7 +5,7 @@ using MediatR;
 namespace MotorInsurance.API.Features.Users.Queries;
 
 // Query to retrieve a user by ID
-public record GetUserQuery(Guid UserId) : IRequest<GetUserResponse>;
+public record GetUserQuery(Guid Id) : IRequest<GetUserResponse>;
 
 
 // Response DTO for GetUserByIdQuery

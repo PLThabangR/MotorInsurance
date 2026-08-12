@@ -8,6 +8,6 @@
     "\\MotorInsurance.Domain",
     "\\MotorInsurance.Domain\\Entities"
   ],
-  "SelectedNode": "\\MotorInsurance.Domain\\MotorInsurance.Domain.csproj",
+  "SelectedNode": "\\MotorInsurance.API\\Features\\Users",
   "PreviewInSolutionExplorer": false
 }

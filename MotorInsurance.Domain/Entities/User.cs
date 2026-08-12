@@ -19,7 +19,10 @@ public class User
     /// <summary>
     /// /Force using the public constructor with parameters to ensure proper initialization of the User entity.
     /// </summary>
-    private User() { } // Private constructor to prevent direct instantiation
+    private User()
+    {
+        //EF Core sets properties directly
+    } // Private constructor to prevent direct instantiation
 
     //Enforce  business rules and validation in the public constructor
     public User(string email, string name)

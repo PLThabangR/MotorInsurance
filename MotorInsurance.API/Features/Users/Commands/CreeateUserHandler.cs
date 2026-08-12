@@ -3,30 +3,44 @@
 using MediatR;
 using MotorInsurance.Domain.Entities;
 using Mapster;
+using MotorInsurance.Domain.Persistence;
+using Microsoft.EntityFrameworkCore;
 
 namespace MotorInsurance.API.Features.Users.Commands;
 
 
 public class CreateUserHandler : IRequestHandler<CreateUserCommand, CreateUserResponse>
 {
-    //in memory
-    private static readonly List<User> _users = new ();
-    public Task<CreateUserResponse> Handle(CreateUserCommand request, CancellationToken cancellationToken)
+    private ApplicationDbContext _context;
+    //Constructor 
+    public CreateUserHandler(ApplicationDbContext context)
+    {   
+        _context = context;
+    }
+    public async Task<CreateUserResponse> Handle(CreateUserCommand request, CancellationToken cancellationToken)
     {
         // Business RUles ##1
-        if(_users.Any(x => x.Email == request.Email)){
+        //AskNoTracking no caching
+        var emailExists = await _context.Users.AsNoTracking().FirstOrDefaultAsync(x => x.Email == request.Email, cancellationToken);
+
+        // If email exist throw exception
+        if (emailExists is not null)
+        {
             throw new ArgumentException($"User with email {request.Email} already exists.");
-            }// Business RUles ##1
+        }
 
-            //business rules ##2
-            var user = new User(request.Email, request.Name);
+        //create user entity
+        var user = new User(request.Email, request.Name);
 
-            _users.Add(user);
+        //save to database
+        await _context.Users.AddAsync(user, cancellationToken);
+        await _context.SaveChangesAsync(cancellationToken);
+
 
            //Mapster
            var response = user.Adapt<CreateUserResponse>();
             //return Task.FromResult(response);
-            return Task.FromResult(response);
+            return response;
             
     }
 

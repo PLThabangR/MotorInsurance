@@ -1,5 +1,7 @@
 using Carter;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
+using MotorInsurance.Domain.Persistence;
 using Serilog;
 using System.Reflection;
 
@@ -24,6 +26,34 @@ try
     // 2. BUILD THE APPLICATION
     // ==========================================
     var builder = WebApplication.CreateBuilder(args);
+
+    // ==========================================
+    // ADD DATABASE CONTEXT
+    // ==========================================
+    // Register ApplicationDbContext with dependency injection
+    // Use PostgreSQL as the database provider
+    builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    {
+
+        //get connection string
+        var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+        //use the connection string
+        options.UseNpgsql(connectionString, npgsqlOptions =>
+        {
+            //enable retry on connection failures
+            npgsqlOptions.EnableRetryOnFailure(); //Resilience
+
+            //set the command timeout
+            npgsqlOptions.CommandTimeout(30);
+            // Specify that migrations should be created in this  project
+            npgsqlOptions.MigrationsAssembly("MotorInsurance.API");
+        });
+
+
+
+    });
+
 
     // 2.1 - Basic ASP.NET Core services
     builder.Services.AddControllers();
@@ -53,12 +83,31 @@ try
     // ==========================================
     var app = builder.Build();
 
-    // 3.1 - Development tools
+    // 3.1 - DATABASE MIGRATIONS
+    using (var scope = app.Services.CreateScope())
+    {   //  Database migration
+        var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+
+
+        if (app.Environment.IsDevelopment())
+        {
+            // SEED DATA - Why?
+            // We need some test data to work with
+            // In production, this would come from a database
+            dbContext.Database.Migrate();
+            Log.Information("Database migrations applied successfully");
+
+        } //end of if
+    } //end of using scope
+
+
+    // - Development tools
     if (app.Environment.IsDevelopment())
     {
         app.UseSwagger();      // Generate OpenAPI spec
         app.UseSwaggerUI();    // Swagger UI for testing
     }
+
 
     // 3.2 - Security middleware
     app.UseHttpsRedirection();  // Force HTTPS (for production)
