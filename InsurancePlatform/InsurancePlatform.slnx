@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/docker/">
+    <File Path="docker-compose.yaml" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitignore" />
+    <File Path="Directory.Build.props.xml" />
+  </Folder>
+  <Project Path="src/Shared/Shared.Abstractions/Shared.Abstractions/Shared.Abstractions.csproj" Id="b16f76f1-7092-458f-a220-e89931c3f8d4" />
+  <Project Path="tests/Shared.Tests/Shared.Tests.csproj" Id="79c9ade5-d5be-40fd-a9a2-054284887363" />
+</Solution>

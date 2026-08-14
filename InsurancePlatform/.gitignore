@@ -1,0 +1,10 @@
+## .NET
+[Bb]in/
+[Oo]bj/
+TestResults/
+*.user
+*.suo
+*.cache
+.vs/
+packages/
+*.nupkg
