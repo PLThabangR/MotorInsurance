@@ -109,6 +109,14 @@ public class AppDbContext : IdentityDbContext<ApplicationUser>
                   .WithMany(v => v.TelematicsRecords)//One vehicle can have many telematics records, but each telematics record is linked to one vehicle. This is a one-to-many relationship.
                   .HasForeignKey(e => e.VehicleId);
         });
+
+        //setting constraints for refrence data tables
+        modelBuilder.Entity<RefreshToken>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+           entity.HasIndex(e => e.TokenHash, "IX_RefreshTokens_TokenHash").IsUnique();//Unique index on token hash
+
+        });
     }
 
 }
